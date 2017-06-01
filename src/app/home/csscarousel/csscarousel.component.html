@@ -1,0 +1,18 @@
+
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+
+<div *ngFor="let image of images" class="item" [ngClass]="{active: isActive(image.url)}">
+  <img src="{{image.url}}" alt="lirote">
+  <div class="carousel-caption">
+      <div id="drugidiv">
+         <p id="sitetitle"><span style="text-shadow: 5px 5px 5px;"> BIM </span><br>
+           <span class="subTitle">{{image.title}}</span> <br>
+           <a href="#"><span onclick="pronadjiSobu()" id="findMore">PRONADJITE SOBU</span></a>
+         </p>
+     </div>
+  </div>
+</div>
+
+</div>
