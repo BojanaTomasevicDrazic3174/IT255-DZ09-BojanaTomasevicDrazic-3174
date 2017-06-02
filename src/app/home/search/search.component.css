@@ -1,0 +1,14 @@
+#search{
+  /*  background-color: thistle;*/
+}
+#search p {
+    text-align: center;
+    font-size: 20px;
+    color: crimson;
+    font-family: monospace;
+    font-weight: 700;
+}
+#filter{
+  margin: 15px;
+  text-align: right;
+}

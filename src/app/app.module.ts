@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routes';
 import { CSSCarouselComponent } from './home/csscarousel/csscarousel.component';
+import { SearchComponent } from './home/search/search.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CSSCarouselComponent
+    CSSCarouselComponent,
+    SearchComponent,
+    FilterPipe
     ],
   imports: [
     BrowserModule,

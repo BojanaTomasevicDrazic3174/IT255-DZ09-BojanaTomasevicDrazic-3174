@@ -1,0 +1,29 @@
+<div id="search" class="col-xs-12 col-md-offset-1 col-sm-10 .col-lg-offset-1 col-lg-10">
+  <p>Pretraga Soba</p>
+  <form id="filter">
+    <label>Broj kreveta</label>
+    <input name="search" type="number" [(ngModel)]="searchText"/>
+    <label>Broj kvadrata</label>
+    <input name="kvadrata" type="number" [(ngModel)]="brojKvadrata"/>
+  </form>
+<table class="table table-hover">
+    <thead style="background-color: beige;">
+      <tr>
+        <th>Broj kreveta</th>
+        <th>Broj kvadrata</th>
+        <th>Odvojena kuhinja</th>
+        <th>Terasa</th>
+        <th>Sprat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of rooms | filter: searchText : brojKvadrata ">
+        <td>{{room.brojKreveta}}</td>
+        <td>{{room.brojKvadrata}}</td>
+        <td>{{room.kuhinja}}</td>
+        <td>{{room.terasa}}</td>
+        <td>{{room.sprat}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
