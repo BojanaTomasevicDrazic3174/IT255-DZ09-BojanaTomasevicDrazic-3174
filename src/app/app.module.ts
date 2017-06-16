@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,9 @@ import { routing } from './app.routes';
 import { CSSCarouselComponent } from './home/csscarousel/csscarousel.component';
 import { SearchComponent } from './home/search/search.component';
 import { FilterPipe } from './filter.pipe';
+import { AddEditDataComponent } from './add-edit-data/add-edit-data.component';
+import { AddEditRoomComponent } from './add-edit-data/add-edit-room/add-edit-room.component';
+import { AddEditHotelComponent } from './add-edit-data/add-edit-hotel/add-edit-hotel.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,17 @@ import { FilterPipe } from './filter.pipe';
     HomeComponent,
     CSSCarouselComponent,
     SearchComponent,
-    FilterPipe
+    FilterPipe,
+    AddEditDataComponent,
+    AddEditRoomComponent,
+    AddEditHotelComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Dodaj Hotel</h1>
+    <form class="col-lg-5" [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+      <div class="form-group">
+        <label for="">Grad</label>
+        <input type="text" class="form-control"  formControlName="grad" required>
+      </div>
+      <div class="form-group">
+        <label for="">Broj zvezdica</label>
+        <select class="form-control" formControlName="zvezdica" required>
+          <option *ngFor="let pow of zvezdice" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Udaljenost od centra</label>
+        <input type="text" class="form-control" formControlName="udaljenost" required>
+      </div>
+      <div class="form-group">
+        <label for="">Sopstveni parking</label>
+        <select class="form-control" formControlName="parking" required>
+          <option *ngFor="let pow of daNE" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Restoran</label>
+        <select class="form-control" formControlName="restoran" required>
+          <option *ngFor="let pow of daNE" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">Kontakt</label>
+        <input type="text" class="form-control" formControlName="kontakt" required>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
