@@ -74,48 +74,56 @@
 	  case 'GET':
 	    header("Access-Control-Allow-Origin: *");
 		$data = array(
-			array('brojKreveta' => '1','brojKvadrata' => '25','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Prvi'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Da','terasa' => 'Ne','sprat' => 'Drugi'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Prvi'),
-			array('brojKreveta' => '4','brojKvadrata' => '40','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Treci'),
-			array('brojKreveta' => '3','brojKvadrata' => '35','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Treci'),
-			array('brojKreveta' => '3','brojKvadrata' => '32','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Treci'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Drugi'),
-			array('brojKreveta' => '1','brojKvadrata' => '25','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Drugi'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Drugi'),
-			array('brojKreveta' => '5','brojKvadrata' => '50','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Treci'),
-			array('brojKreveta' => '4','brojKvadrata' => '45','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Prvi'),
-			array('brojKreveta' => '4','brojKvadrata' => '45','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Prvi'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Prvi'),
-			array('brojKreveta' => '1','brojKvadrata' => '25','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Prvi'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Da','sprat' => 'Drugi'),
-			array('brojKreveta' => '2','brojKvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Da','sprat' => 'Drugi'),
+			array('id' =>'1','kreveta' => '1','kvadrata' => '25','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Prvi'),
+			array('id' =>'2','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Da','terasa' => 'Ne','sprat' => 'Drugi'),
+			array('id' =>'3','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Prvi'),
+			array('id' =>'4','kreveta' => '4','kvadrata' => '40','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Treci'),
+			array('id' =>'5','kreveta' => '3','kvadrata' => '35','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Treci'),
+			array('id' =>'6','kreveta' => '3','kvadrata' => '32','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Treci'),
+			array('id' =>'7','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Drugi'),
+			array('id' =>'8','kreveta' => '1','kvadrata' => '25','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Drugi'),
+			array('id' =>'9','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Drugi'),
+			array('id' =>'10','kreveta' => '5','kvadrata' => '50','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Treci'),
+			array('id' =>'11','kreveta' => '4','kvadrata' => '45','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Prvi'),
+			array('id' =>'12','kreveta' => '4','kvadrata' => '45','kuhinja' => 'Da','terasa' => 'Da','sprat' => 'Prvi'),
+			array('id' =>'13','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Prvi'),
+			array('id' =>'14','kreveta' => '1','kvadrata' => '25','kuhinja' => 'Ne','terasa' => 'Ne','sprat' => 'Prvi'),
+			array('id' =>'15','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Da','sprat' => 'Drugi'),
+			array('id' =>'16','kreveta' => '2','kvadrata' => '30','kuhinja' => 'Ne','terasa' => 'Da','sprat' => 'Drugi'),
 
 		);
 		echo json_encode($data);
 	    break;
 	  case 'DELETE':
-	    do_something_with_delete();
+        header("Access-Control-Allow-Origin: *");
+        header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+        if(urldecode($_REQUEST['deleteSoba'])){
+          	echo ("Ok");
+          }
+        if(urldecode($_REQUEST['deleteHotel'])){
+        	echo ("Ok");
+        }
 	    break;
 }
 
 ?>
 
 <!--
-[{"brojKreveta":"1","brojKvadrata":"25","kuhinja":"Ne","terasa":"Ne","sprat":"Prvi"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Da","terasa":"Ne","sprat":"Drugi"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Da","terasa":"Da","sprat":"Prvi"},
-{"brojKreveta":"4","brojKvadrata":"40","kuhinja":"Da","terasa":"Da","sprat":"Treci"},
-{"brojKreveta":"3","brojKvadrata":"35","kuhinja":"Ne","terasa":"Ne","sprat":"Treci"},
-{"brojKreveta":"3","brojKvadrata":"32","kuhinja":"Ne","terasa":"Ne","sprat":"Treci"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Ne","terasa":"Ne","sprat":"Drugi"},
-{"brojKreveta":"1","brojKvadrata":"25","kuhinja":"Ne","terasa":"Ne","sprat":"Drugi"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Ne","terasa":"Ne","sprat":"Drugi"},
-{"brojKreveta":"5","brojKvadrata":"50","kuhinja":"Da","terasa":"Da","sprat":"Treci"},
-{"brojKreveta":"4","brojKvadrata":"45","kuhinja":"Da","terasa":"Da","sprat":"Prvi"},
-{"brojKreveta":"4","brojKvadrata":"45","kuhinja":"Da","terasa":"Da","sprat":"Prvi"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Ne","terasa":"Ne","sprat":"Prvi"},
-{"brojKreveta":"1","brojKvadrata":"25","kuhinja":"Ne","terasa":"Ne","sprat":"Prvi"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Ne","terasa":"Da","sprat":"Drugi"},
-{"brojKreveta":"2","brojKvadrata":"30","kuhinja":"Ne","terasa":"Da","sprat":"Drugi"}]
+[{"kreveta":"1","kvadrata":"25","kuhinja":"Ne","terasa":"Ne","sprat":"Prvi"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Da","terasa":"Ne","sprat":"Drugi"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Da","terasa":"Da","sprat":"Prvi"},
+{"kreveta":"4","kvadrata":"40","kuhinja":"Da","terasa":"Da","sprat":"Treci"},
+{"kreveta":"3","kvadrata":"35","kuhinja":"Ne","terasa":"Ne","sprat":"Treci"},
+{"kreveta":"3","kvadrata":"32","kuhinja":"Ne","terasa":"Ne","sprat":"Treci"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Ne","terasa":"Ne","sprat":"Drugi"},
+{"kreveta":"1","kvadrata":"25","kuhinja":"Ne","terasa":"Ne","sprat":"Drugi"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Ne","terasa":"Ne","sprat":"Drugi"},
+{"kreveta":"5","kvadrata":"50","kuhinja":"Da","terasa":"Da","sprat":"Treci"},
+{"kreveta":"4","kvadrata":"45","kuhinja":"Da","terasa":"Da","sprat":"Prvi"},
+{"kreveta":"4","kvadrata":"45","kuhinja":"Da","terasa":"Da","sprat":"Prvi"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Ne","terasa":"Ne","sprat":"Prvi"},
+{"kreveta":"1","kvadrata":"25","kuhinja":"Ne","terasa":"Ne","sprat":"Prvi"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Ne","terasa":"Da","sprat":"Drugi"},
+{"kreveta":"2","kvadrata":"30","kuhinja":"Ne","terasa":"Da","sprat":"Drugi"}]
 -->

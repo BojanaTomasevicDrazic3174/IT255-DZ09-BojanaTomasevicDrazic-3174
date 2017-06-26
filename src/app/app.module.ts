@@ -12,7 +12,7 @@ import { FilterPipe } from './filter.pipe';
 import { AddEditDataComponent } from './add-edit-data/add-edit-data.component';
 import { AddEditRoomComponent } from './add-edit-data/add-edit-room/add-edit-room.component';
 import { AddEditHotelComponent } from './add-edit-data/add-edit-hotel/add-edit-hotel.component';
-
+import {DataService} from './data.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { AddEditHotelComponent } from './add-edit-data/add-edit-hotel/add-edit-h
     AddEditDataComponent,
     AddEditRoomComponent,
     AddEditHotelComponent
+
     ],
   imports: [
     BrowserModule,
@@ -31,7 +32,7 @@ import { AddEditHotelComponent } from './add-edit-data/add-edit-hotel/add-edit-h
     routing,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

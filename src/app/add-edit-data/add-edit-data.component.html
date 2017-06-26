@@ -1,5 +1,64 @@
-<div class="container">
-    <h1 style="margin-bottom: 50px;">Dodavanje hotela i soba</h1>
-    <a [routerLink]="['add-room']"><button>Dodaj Sobu</button></a>
-    <a [routerLink]="['add-hotel']"><button>Dodaj Hotel</button></a>
+<div id="listaSobaHotela" class="col-xs-12 col-md-offset-1 col-sm-10 .col-lg-offset-1 col-lg-10">
+    <h1 style="margin-bottom: 50px;">Dodavanje, brisanje i izmena soba i hotela</h1>
+
+    <div class="col-xs-12 col-sm-12 col-lg-6">
+    <a [routerLink]="['add-edit-room/new-room']"><button>Dodaj Sobu</button></a>
+
+    <table class="table table-hover">
+        <thead style="background-color: beige;">
+          <tr>
+            <th>Broj kreveta</th>
+            <th>Broj kvadrata</th>
+            <th>Odvojena kuhinja</th>
+            <th>Terasa</th>
+            <th>Sprat</th>
+            <th>Akcije</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let room of rooms">
+            <td>{{room.kreveta}}</td>
+            <td>{{room.kvadrata}}</td>
+            <td>{{room.kuhinja}}</td>
+            <td>{{room.terasa}}</td>
+            <td>{{room.sprat}}</td>
+            <td><button (click)="izmeniSobu(room)">Edit</button ><button (click)="obrisiSobu(room)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+
+
+    <div class="col-xs-12 col-sm-12 col-lg-6">
+    <a [routerLink]="['add-edit-hotel/new-hotel']"><button>Dodaj Hotel</button></a>
+
+    <table class="table table-hover">
+        <thead style="background-color: beige;">
+          <tr>
+            <th>Grad</th>
+            <th>Zvezdica</th>
+            <th>Udaljenost-centar</th>
+            <th>Parking</th>
+            <th>Restoran</th>
+            <th>Kontakt</th>
+            <th>Akcije</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hotel of hotels">
+            <td>{{hotel.grad}}</td>
+            <td>{{hotel.zvezdica}}</td>
+            <td>{{hotel.udaljenost}}</td>
+            <td>{{hotel.parking}}</td>
+            <td>{{hotel.restoran}}</td>
+            <td>{{hotel.kontakt}}</td>
+             <td><button (click)="izmeniHotel(hotel)">Edit</button><button (click)="obrisiHotel(hotel)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
 </div>

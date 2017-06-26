@@ -7,3 +7,9 @@ margin-bottom: 600px;
 .container a{
     margin: 40px;
 }
+#listaSobaHotela{
+  text-align: center;
+}
+#listaSobaHotela a button{
+  margin-bottom: 15px;
+}

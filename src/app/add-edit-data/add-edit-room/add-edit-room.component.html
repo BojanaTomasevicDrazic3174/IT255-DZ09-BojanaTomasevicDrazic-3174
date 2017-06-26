@@ -1,6 +1,10 @@
 <div class="container">
-    <h1>Dodaj sobu</h1>
+    <h1 *ngIf="soba===undefined">Dodaj sobu</h1> <h1 *ngIf="soba!==undefined">Izmeni sobu</h1>
     <form class="col-lg-5" [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+      <div class="form-group" [hidden]="true">
+        <label for=""></label>
+        <input type="number" class="form-control" formControlName="id" required>
+      </div>
       <div class="form-group">
         <label for="">Broj kvadrata</label>
         <input type="number" class="form-control" formControlName="kvadrata" required>
@@ -15,7 +19,7 @@
       </div>
       <div class="form-group">
         <label for="">Terasa</label>
-        <select class="form-control" formControlName="terasa" required>
+        <select class="form-control" formControlName="terasa" required >
           <option *ngFor="let pow of daNE" [value]="pow">{{pow}}</option>
         </select>
       </div>

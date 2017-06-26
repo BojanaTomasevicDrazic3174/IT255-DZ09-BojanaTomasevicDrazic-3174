@@ -9,8 +9,8 @@ export const appRoutes:Routes  = [
   {  path: '',  component: HomeComponent },
   {  path:'home', component: HomeComponent },
   {  path:'usluge/sobe-hoteli-admin', component: AddEditDataComponent },
-  {  path:'usluge/sobe-hoteli-admin/add-room', component: AddEditRoomComponent },
-  {  path:'usluge/sobe-hoteli-admin/add-hotel', component: AddEditHotelComponent }
+  {  path:'usluge/sobe-hoteli-admin/add-edit-room/:id', component: AddEditRoomComponent },
+  {  path:'usluge/sobe-hoteli-admin/add-edit-hotel/:id', component: AddEditHotelComponent }
 
 ]
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
